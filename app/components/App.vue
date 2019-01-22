@@ -1,11 +1,11 @@
 <template>
     <Page>
       <ActionBar title="NativeScript AR"></ActionBar>
-
       <GridLayout class="page">
         <AR v-if="loaded"
-          debugLevel="FEATURE_POINTS"
-          detectPlanes="true">
+         :detectPlanes="false"
+         :planeMaterial="planeMaterial"
+         @planeTapped="onPlaneTapped">
         </AR>
       </GridLayout>
     </Page>
@@ -13,6 +13,8 @@
 
 <script>
   import { Color } from "tns-core-modules/color";
+  import { ARMaterial } from "nativescript-ar";
+  import * as camera from "nativescript-camera";
   export default {
     data() {
       return {
@@ -28,6 +30,25 @@
       setTimeout(() => {
         this.loaded = true;
       }, 1000);
+    },
+    methods: {
+      onPlaneTapped(args) {
+        const ar = args.object;
+        ar.addBox({
+          position: {
+            x: args.position.x,
+            y: args.position.y,
+            z: args.position.z
+          },
+          dimensions: {
+            x: 0.1,
+            y: 0.1,
+            z: 0.1
+          },
+          mass: 20,
+          materials: [new Color("green")]
+        });
+      }
     }
   }
 </script>
@@ -39,8 +60,9 @@
     }
 
     AR {
-      height: 300px;
-      width: 300px;
+      height: 100%;
+      width: 100%;
+      z-index: 999;
     }
 
     .title {

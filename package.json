@@ -6,15 +6,16 @@
   "license": "MIT",
   "nativescript": {
     "id": "org.erasmo.application",
-    "tns-ios": {
-      "version": "5.0.0"
-    },
     "tns-android": {
-      "version": "5.0.0"
+      "version": "^5.1.2"
+    },
+    "tns-ios": {
+      "version": "5.1.1"
     }
   },
   "dependencies": {
-    "nativescript-ar": "^0.6.0",
+    "nativescript-ar": "^0.6.2",
+    "nativescript-camera": "^4.1.1",
     "nativescript-theme-core": "^1.0.4",
     "nativescript-ui-sidedrawer": "^4.3.0",
     "nativescript-vue": "^2.0.0",
