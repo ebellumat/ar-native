@@ -4,7 +4,7 @@
       <GridLayout class="page">
         <AR v-if="loaded"
          :detectPlanes="true"
-         :planeMaterial="planeMaterial"
+         @planeDetected="showAlert"
          @planeTapped="onPlaneTapped">
         </AR>
       </GridLayout>
@@ -22,7 +22,7 @@
         loaded: false,
         planeMaterial: {
           diffuse: new Color("white"),
-          transparency: 0.01
+          transparency: 0.0
         }
       }
     },
@@ -32,6 +32,9 @@
       }, 1000);
     },
     methods: {
+      showAlert () {
+        alert('Scan concluído!');
+      },
       onPlaneTapped(args) {
         const ar = args.object;
         ar.addBox({
@@ -46,7 +49,7 @@
             z: 0.1
           },
           mass: 20,
-          materials: [new Color("green")]
+          materials: [new Color("#4db87d")]
         });
       }
     }
