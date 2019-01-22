@@ -20,6 +20,7 @@
       return {
         msg: 'Hello World!',
         loaded: false,
+        alerted: false,
         planeMaterial: {
           diffuse: new Color("white"),
           transparency: 0.0
@@ -33,6 +34,8 @@
     },
     methods: {
       showAlert () {
+        if (this.alerted) return;
+        this.alerted = true;
         alert('Scan concluído!');
       },
       onPlaneTapped(args) {
