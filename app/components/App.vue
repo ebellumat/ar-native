@@ -3,7 +3,7 @@
       <ActionBar title="NativeScript AR"></ActionBar>
       <GridLayout class="page">
         <AR v-if="loaded"
-         :detectPlanes="false"
+         :detectPlanes="true"
          :planeMaterial="planeMaterial"
          @planeTapped="onPlaneTapped">
         </AR>
@@ -22,7 +22,7 @@
         loaded: false,
         planeMaterial: {
           diffuse: new Color("white"),
-          transparency: 0.2
+          transparency: 0.01
         }
       }
     },
