@@ -53,7 +53,7 @@
           },
           mass: 20,
           materials: [new Color("#4db87d")]
-        });
+        }); 
       }
     }
   }
