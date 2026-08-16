@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Ar app test for Café com Vue",
   "author": "ebellumat <lbj.erasmo@gmail.com>",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "nativescript": {
     "id": "org.erasmo.application",
     "tns-android": {
